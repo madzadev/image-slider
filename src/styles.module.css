@@ -1,9 +1,72 @@
 /* add css module styles here (optional) */
 
-.test {
+/* .test {
   margin: 2em;
   padding: 0.5em;
   border: 2px solid #000;
   font-size: 2em;
   text-align: center;
+} */
+
+.wrapper {
+  width: 800px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.wrapper img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.leftClick {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 50%;
+  left: 0;
+  color: white;
+}
+
+.leftClick:hover {
+  cursor: pointer;
+}
+
+.rightClick {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  /* border: 3px solid yellow; */
+  top: 50%;
+  right: 0;
+  color: white;
+}
+
+.rightClick:hover {
+  cursor: pointer;
+}
+
+.dots {
+  width: 100%;
+  display: flex;
+  /* border: 1px solid green; */
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.dot {
+  width: 30px;
+  height: 30px;
+  background-color: lightblue;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.activeDot {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(76, 171, 202);
+  border-radius: 50%;
+  margin: 0 10px;
 }
