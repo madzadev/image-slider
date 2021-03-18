@@ -15,14 +15,14 @@ const App = () => {
       <ExampleComponent text='Create React Library Example 😄' />
       <h1>Installation</h1>
       <SyntaxHighlighter language='bash' style={coldarkDark}>
-        {`npm install @madzadev/audio-player`}
+        {`npm install @madzadev/image-slider`}
       </SyntaxHighlighter>
       <h1>Usage</h1>
       <SyntaxHighlighter language='javascript' style={coldarkDark}>
-        {`import Player from '@madzadev/audio-player'`}
+        {`import Slider from '@madzadev/image-slider'`}
       </SyntaxHighlighter>
       <SyntaxHighlighter language='javascript' style={coldarkDark}>
-        {`const tracks = [
+        {`const images = [
           {
             url: 'https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3',
             title: 'Madza - Chords of Life',
@@ -105,10 +105,6 @@ const App = () => {
       <p className='warning'>
         It's recommended to use CMS like a Contentful or DatoCMS to manage your
         audio files and access them via API.
-      </p>
-      <p className='note'>
-        Other alternatives include Google Drive and Dropbox or store you audio
-        files directly in the project.
       </p>
     </div>
   )
