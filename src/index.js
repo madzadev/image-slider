@@ -42,6 +42,18 @@ export const ExampleComponent = ({ text }) => {
   }
   return (
     <div>
+      <div style={{ textAlign: 'right', maxWidth: '1000px' }}>
+        <p>
+          Photo by{' '}
+          <a href='https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
+            FLY:D
+          </a>{' '}
+          on{' '}
+          <a href='/collections/4390214/abstract?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
+            Unsplash
+          </a>
+        </p>
+      </div>
       <div className={styles.wrapper}>
         <div className={styles.leftClick} onClick={leftClickHandle}>
           ←
@@ -51,6 +63,7 @@ export const ExampleComponent = ({ text }) => {
           →
         </div>
       </div>
+
       <div className={styles.dots}>
         {images.map((el, index) => {
           if (index !== active) {

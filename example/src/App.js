@@ -7,6 +7,8 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { ExampleComponent } from 'image-slideshow'
 import 'image-slideshow/dist/index.css'
 
+// const images = ['./1.jpg', './2.jpg']
+
 const App = () => {
   return (
     <div className={styles.wrapper}>
@@ -25,8 +27,9 @@ const App = () => {
         {`const images = [
           {
             url: 'https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3',
-            title: 'Madza - Chords of Life',
-            tags: ['house']
+            title: 'AAAA',
+            author: 'John Doe',
+            authorLink:'dfdfrf'
           },
           {
             url: 'https://audioplayer.madza.dev/Madza-Late_Night_Drive.mp3',
@@ -41,10 +44,10 @@ const App = () => {
         ]`}
       </SyntaxHighlighter>
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
-        {`<Player trackList={tracks} />`}
+        {`<Slider imageList={images} />`}
       </SyntaxHighlighter>
       <p className='warning'>
-        <code>'trackList'</code> is the mandatory prop and requires to pass in
+        <code>'imageList'</code> is the mandatory prop and requires to pass in
         an array consisting of objects with <code>url</code>, <code>title</code>{' '}
         and <code>tags</code> keys.
       </p>
@@ -53,12 +56,15 @@ const App = () => {
         The default values of available options props are displayed.
       </p>
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
-        {`<Player
-        trackList={tracks}
-        includeTags={true}
-        includeSearch={true}
-        showPlaylist={true}
-        autoPlayNextTrack={true}
+        {`<Slider
+        imageList={images}
+        width={800}
+        height={400}
+        autoPlay={true}
+        showCredits={true}
+        showTitle={true}
+        showProgress={true}
+        controls='points'
       />`}
       </SyntaxHighlighter>
       {/* <h1>Features</h1>
