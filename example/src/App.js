@@ -4,8 +4,8 @@ import styles from './App.module.css'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-import { ExampleComponent } from 'image-slideshow'
-import 'image-slideshow/dist/index.css'
+import { ExampleComponent } from 'image-slider'
+import 'image-slider/dist/index.css'
 
 // const images = ['./1.jpg', './2.jpg']
 
