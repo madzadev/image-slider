@@ -41,19 +41,13 @@ export const Slider = ({ imageList }) => {
     } else {
       setActive((active = 0))
     }
-  }, 5000)
+  }, 3000)
   return (
     <div>
       <div style={{ textAlign: 'right', maxWidth: '1000px' }}>
         <p>
           Photo by{' '}
-          <a href='https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
-            FLY:D
-          </a>{' '}
-          on{' '}
-          <a href='/collections/4390214/abstract?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
-            Unsplash
-          </a>
+          <a href={imageList[active].authorLink}>{imageList[active].author}</a>
         </p>
       </div>
       <div className={styles.wrapper}>
@@ -67,9 +61,10 @@ export const Slider = ({ imageList }) => {
         <div className={styles.rightClick} onClick={rightClickHandle}>
           →
         </div>
-        <div className={styles.description}>{imageList[active].title}</div>
       </div>
-
+      <div className={styles.description}>
+        <p>{imageList[active].title}</p>
+      </div>
       <div className={styles.dots}>
         {imageList.map((el, index) => {
           if (index !== active) {

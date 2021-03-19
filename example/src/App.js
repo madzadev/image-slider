@@ -94,7 +94,7 @@ const App = () => {
       <h1>Sizing</h1>
       <p className='note'>
         By default image slider is set to be 100% width and height of it's
-        parent. To set specific values, wrap it like so:
+        parent. To set specific values, wrap it:
       </p>
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {` <div style={{width: '700px', height: '350px'}}>
@@ -102,7 +102,8 @@ const App = () => {
     </div>`}
       </SyntaxHighlighter>
       <p className='warning'>
-        Larger images will fit and be centered, thanks to `object-fit: cover`.
+        Larger images will fit and be centered, thanks to{' '}
+        <code>object-fit: cover</code>.
       </p>
       <p className='warning'>
         Smaller images will not be stretched, instead the background color will
@@ -111,7 +112,7 @@ const App = () => {
       <h1>Preview</h1>
       <p className='note'>
         By default image preview is disabled (dots are used instead). To enable
-        it, set `preview` prop to `true`.
+        it, set <code>preview</code> prop to <code>true</code>.
       </p>
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Slider imageList={images} preview={true}/>`}

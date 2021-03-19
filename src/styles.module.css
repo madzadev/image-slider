@@ -43,10 +43,12 @@
   /* border: 3px solid yellow; */
   display: grid;
   place-items: center;
+  /* border-radius: 50%; */
 }
 
 .leftClick:hover {
   cursor: pointer;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .rightClick {
@@ -61,20 +63,28 @@
   color: white;
   display: grid;
   place-items: center;
+  /* border-radius: 50%; */
 }
 
 .rightClick:hover {
   cursor: pointer;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .description {
-  padding: 20px 0;
+  padding: 10px 0;
   color: white;
-  position: absolute;
-  bottom: 0;
   text-align: center;
   width: 100%;
   /* border: 1px solid red; */
+  /* filter: blur(10px); */
+  background: rgba(255, 255, 255, 1);
+  /* opacity: 0.3; */
+}
+
+.description p {
+  color: black;
+  margin: 0;
 }
 
 .dots {
