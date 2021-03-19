@@ -34,6 +34,14 @@ export const Slider = ({ imageList }) => {
     const dotNum = e.target.getAttribute('data-key')
     setActive((active = parseInt(dotNum)))
   }
+
+  setInterval(() => {
+    if (active !== imageList.length - 1) {
+      setActive((active += 1))
+    } else {
+      setActive((active = 0))
+    }
+  }, 5000)
   return (
     <div>
       <div style={{ textAlign: 'right', maxWidth: '1000px' }}>
@@ -49,13 +57,17 @@ export const Slider = ({ imageList }) => {
         </p>
       </div>
       <div className={styles.wrapper}>
+        <p className={styles.progress}>
+          {`${active + 1} / ${imageList.length}`}
+        </p>
         <div className={styles.leftClick} onClick={leftClickHandle}>
           ←
         </div>
-        <img src={imageList[active]} alt='image' />
+        <img src={imageList[active].url} alt='image' />
         <div className={styles.rightClick} onClick={rightClickHandle}>
           →
         </div>
+        <div className={styles.description}>{imageList[active].title}</div>
       </div>
 
       <div className={styles.dots}>

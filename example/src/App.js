@@ -7,20 +7,37 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { Slider } from 'image-slider'
 import 'image-slider/dist/index.css'
 
-// const images = [
-//   'https://source.unsplash.com/random/800x400?sig=1',
-//   'https://source.unsplash.com/random/800x400?sig=2',
-//   'https://source.unsplash.com/random/800x400?sig=3'
-// ]
-const images = ['./1.jpg', './2.jpg']
+const images = [
+  {
+    url: 'https://source.unsplash.com/random/800x400?sig=1',
+    title: 'AAAA',
+    author: 'John Doe',
+    authorLink: 'dfdfrf'
+  },
+  {
+    url: 'https://source.unsplash.com/random/800x400?sig=2',
+    title: 'BBBB',
+    author: 'John Doe',
+    authorLink: 'dfdfrf'
+  },
+  {
+    url: 'https://source.unsplash.com/random/800x400?sig=3',
+    title: 'CCCC',
+    author: 'John Doe',
+    authorLink: 'dfdfrf'
+  }
+]
+
+// const images = ['./1.jpg', './2.jpg']
 
 const App = () => {
   return (
     <div className={styles.wrapper}>
       <h1>Image Slider Component</h1>
       <p>This is the description of the component</p>
+      {/* <div style={{ width: '800px', height: '400px' }}> */}
       <Slider imageList={images} />
-      <h1>Installation</h1>
+      {/* </div> */}`<h1>Installation</h1>
       <SyntaxHighlighter language='bash' style={coldarkDark}>
         {`npm install @madzadev/image-slider`}
       </SyntaxHighlighter>
@@ -63,59 +80,46 @@ const App = () => {
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
         {`<Slider
         imageList={images}
-        width={800}
-        height={400}
         autoPlay={true}
         showCredits={true}
-        showTitle={true}
         showProgress={true}
-        controls='points'
+        showControls={true}
+        showDescription={true}
       />`}
       </SyntaxHighlighter>
       {/* <h1>Features</h1>
       Play/Pause Next/Previous tracks Loop audio Shuffle play Drag progress bar
       Volume control Clickable playlist Filter audio files based on genre Search
       audio files by title Responsive design */}
-      <h1>Color schemas</h1>
-      <p className='note'>The player uses 5 color palette by default.</p>
-      <p className='warning'>
-        You can further customize the player by editing the colors variable
-        below.
+      <h1>Sizing</h1>
+      <p className='note'>
+        By default image slider is set to be 100% width and height of it's
+        parent. To set specific values, wrap it like so:
       </p>
-      <SyntaxHighlighter language='javascript' style={coldarkDark}>
-        {`const colors = \`html {
-          --tagsBackground: #9440f3;
-          --tagsText: #ffffff;
-          --tagsBackgroundHoverActive: #2cc0a0;
-          --tagsTextHoverActive: #ffffff;
-          --searchBackground: #18191f;
-          --searchText: #ffffff;
-          --searchPlaceHolder: #575a77;
-          --playerBackground: #18191f;
-          --titleColor: #ffffff; 
-          --timeColor: #ffffff;
-          --progressSlider: #9440f3;
-          --progressUsed: #ffffff;
-          --progressLeft: #151616;
-          --volumeSlider: #9440f3;
-          --volumeUsed: #ffffff;
-          --volumeLeft:  #151616;
-          --playlistBackground: #18191f;
-          --playlistText: #575a77;
-          --playlistBackgroundHoverActive:  #18191f;
-          --playlistTextHoverActive: #ffffff;
-      }\``}
-      </SyntaxHighlighter>
       <SyntaxHighlighter language='jsx' style={coldarkDark}>
-        {`<Player
-        trackList={tracks}
-        customColorScheme={colors}
-      />`}
+        {` <div style={{width: '700px', height: '350px'}}>
+      <Slider imageList={images}/>
+    </div>`}
+      </SyntaxHighlighter>
+      <p className='warning'>
+        Larger images will fit and be centered, thanks to `object-fit: cover`.
+      </p>
+      <p className='warning'>
+        Smaller images will not be stretched, instead the background color will
+        be displayed.
+      </p>
+      <h1>Preview</h1>
+      <p className='note'>
+        By default image preview is disabled (dots are used instead). To enable
+        it, set `preview` prop to `true`.
+      </p>
+      <SyntaxHighlighter language='jsx' style={coldarkDark}>
+        {`<Slider imageList={images} preview={true}/>`}
       </SyntaxHighlighter>
       <h1>Final notes</h1>
       <p className='warning'>
-        It's recommended to use CMS like a Contentful or DatoCMS to manage your
-        audio files and access them via API.
+        The project is under MIT licence, so be free to check it out and give
+        contributions.
       </p>
     </div>
   )
