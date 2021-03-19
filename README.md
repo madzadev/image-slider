@@ -1,13 +1,13 @@
-# image-slideshow
+# image-slider
 
 > Made with create-react-library
 
-[![NPM](https://img.shields.io/npm/v/image-slideshow.svg)](https://www.npmjs.com/package/image-slideshow) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/image-slider.svg)](https://www.npmjs.com/package/image-slider) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save image-slideshow
+npm install --save image-slider
 ```
 
 ## Usage
@@ -15,8 +15,8 @@ npm install --save image-slideshow
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'image-slideshow'
-import 'image-slideshow/dist/index.css'
+import MyComponent from 'image-slider'
+import 'image-slider/dist/index.css'
 
 class Example extends Component {
   render() {
