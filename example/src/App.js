@@ -11,7 +11,7 @@ const images = [
   {
     url: 'https://source.unsplash.com/random/800x400?sig=1',
     title: 'AAAA',
-    author: 'John Doe',
+    author: '',
     authorLink: 'dfdfrf'
   },
   {
@@ -35,9 +35,14 @@ const App = () => {
     <div className={styles.wrapper}>
       <h1>Image Slider Component</h1>
       <p>This is the description of the component</p>
-      {/* <div style={{ width: '800px', height: '400px' }}> */}
-      <Slider imageList={images} />
-      {/* </div> */}`<h1>Installation</h1>
+      <Slider
+        imageList={images}
+        showCredits={true}
+        showProgress={true}
+        showControls={true}
+        showDescription={true}
+      />
+      <h1>Installation</h1>
       <SyntaxHighlighter language='bash' style={coldarkDark}>
         {`npm install @madzadev/image-slider`}
       </SyntaxHighlighter>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styles from './styles.module.css'
 
+import Credits from './components/Credits'
+
 export const Slider = ({
   imageList,
   showCredits = true,
@@ -51,14 +53,10 @@ export const Slider = ({
   return (
     <div>
       {showCredits && (
-        <div style={{ textAlign: 'right', maxWidth: '1000px' }}>
-          <p>
-            Photo by{' '}
-            <a href={imageList[active].authorLink}>
-              {imageList[active].author}
-            </a>
-          </p>
-        </div>
+        <Credits
+          author={imageList[active].author}
+          authorLink={imageList[active].authorLink}
+        />
       )}
       <div className={styles.wrapper}>
         {showProgress && (
@@ -79,7 +77,7 @@ export const Slider = ({
           </div>
         )}
       </div>
-      {showControls && (
+      {showDescription && (
         <div className={styles.description}>
           <p>{imageList[active].title}</p>
         </div>
