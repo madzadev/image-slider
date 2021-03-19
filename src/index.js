@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
 import styles from './styles.module.css'
 
-const images = [
-  'https://source.unsplash.com/random/800x400?sig=1',
-  'https://source.unsplash.com/random/800x400?sig=2',
-  'https://source.unsplash.com/random/800x400?sig=3'
-]
-
-export const ExampleComponent = ({ text }) => {
+export const Slider = ({ imageList }) => {
   // const [array, setArray] = useState([1, 2, 3])
   let [active, setActive] = useState(0)
 
@@ -16,7 +10,7 @@ export const ExampleComponent = ({ text }) => {
     if (active !== 0) {
       setActive((active -= 1))
     } else {
-      setActive((active = images.length - 1))
+      setActive((active = imageList.length - 1))
     }
 
     // const [first, second, ...rest] = array
@@ -25,7 +19,7 @@ export const ExampleComponent = ({ text }) => {
 
   const rightClickHandle = () => {
     console.log('Right clicked')
-    if (active !== images.length - 1) {
+    if (active !== imageList.length - 1) {
       setActive((active += 1))
     } else {
       setActive((active = 0))
@@ -58,14 +52,14 @@ export const ExampleComponent = ({ text }) => {
         <div className={styles.leftClick} onClick={leftClickHandle}>
           ←
         </div>
-        <img src={images[active]} alt='image' />
+        <img src={imageList[active]} alt='image' />
         <div className={styles.rightClick} onClick={rightClickHandle}>
           →
         </div>
       </div>
 
       <div className={styles.dots}>
-        {images.map((el, index) => {
+        {imageList.map((el, index) => {
           if (index !== active) {
             return (
               <div
@@ -81,5 +75,4 @@ export const ExampleComponent = ({ text }) => {
       </div>
     </div>
   )
-  // return <div className={styles.test}>Example Component: {text}</div>
 }

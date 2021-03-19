@@ -4,9 +4,14 @@ import styles from './App.module.css'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-import { ExampleComponent } from 'image-slider'
+import { Slider } from 'image-slider'
 import 'image-slider/dist/index.css'
 
+const images = [
+  'https://source.unsplash.com/random/800x400?sig=1',
+  'https://source.unsplash.com/random/800x400?sig=2',
+  'https://source.unsplash.com/random/800x400?sig=3'
+]
 // const images = ['./1.jpg', './2.jpg']
 
 const App = () => {
@@ -14,7 +19,7 @@ const App = () => {
     <div className={styles.wrapper}>
       <h1>Image Slider Component</h1>
       <p>This is the description of the component</p>
-      <ExampleComponent text='Create React Library Example 😄' />
+      <Slider imageList={images} />
       <h1>Installation</h1>
       <SyntaxHighlighter language='bash' style={coldarkDark}>
         {`npm install @madzadev/image-slider`}
