@@ -1,10 +1,10 @@
 {
-  "name": "image-slideshow",
+  "name": "image-slider",
   "version": "1.0.0",
-  "description": "Made with create-react-library",
+  "description": "Image slider component to display images",
   "author": "madzadev",
   "license": "MIT",
-  "repository": "madzadev/image-slideshow",
+  "repository": "madzadev/image-slider",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
