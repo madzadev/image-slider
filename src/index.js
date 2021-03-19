@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import styles from './styles.module.css'
 
-export const Slider = ({ imageList }) => {
+export const Slider = ({
+  imageList,
+  showCredits = true,
+  showProgress = true,
+  showControls = true,
+  showDescription = true
+}) => {
   // const [array, setArray] = useState([1, 2, 3])
   let [active, setActive] = useState(0)
 
@@ -44,27 +50,40 @@ export const Slider = ({ imageList }) => {
   }, 3000)
   return (
     <div>
-      <div style={{ textAlign: 'right', maxWidth: '1000px' }}>
-        <p>
-          Photo by{' '}
-          <a href={imageList[active].authorLink}>{imageList[active].author}</a>
-        </p>
-      </div>
+      {showCredits && (
+        <div style={{ textAlign: 'right', maxWidth: '1000px' }}>
+          <p>
+            Photo by{' '}
+            <a href={imageList[active].authorLink}>
+              {imageList[active].author}
+            </a>
+          </p>
+        </div>
+      )}
       <div className={styles.wrapper}>
-        <p className={styles.progress}>
-          {`${active + 1} / ${imageList.length}`}
-        </p>
-        <div className={styles.leftClick} onClick={leftClickHandle}>
-          ←
-        </div>
+        {showProgress && (
+          <p className={styles.progress}>
+            {`${active + 1} / ${imageList.length}`}
+          </p>
+        )}
+        {showControls && (
+          <div className={styles.leftClick} onClick={leftClickHandle}>
+            ←
+          </div>
+        )}
+
         <img src={imageList[active].url} alt='image' />
-        <div className={styles.rightClick} onClick={rightClickHandle}>
-          →
+        {showControls && (
+          <div className={styles.rightClick} onClick={rightClickHandle}>
+            →
+          </div>
+        )}
+      </div>
+      {showControls && (
+        <div className={styles.description}>
+          <p>{imageList[active].title}</p>
         </div>
-      </div>
-      <div className={styles.description}>
-        <p>{imageList[active].title}</p>
-      </div>
+      )}
       <div className={styles.dots}>
         {imageList.map((el, index) => {
           if (index !== active) {
