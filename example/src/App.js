@@ -7,12 +7,12 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { Slider } from 'image-slider'
 import 'image-slider/dist/index.css'
 
-const images = [
-  'https://source.unsplash.com/random/800x400?sig=1',
-  'https://source.unsplash.com/random/800x400?sig=2',
-  'https://source.unsplash.com/random/800x400?sig=3'
-]
-// const images = ['./1.jpg', './2.jpg']
+// const images = [
+//   'https://source.unsplash.com/random/800x400?sig=1',
+//   'https://source.unsplash.com/random/800x400?sig=2',
+//   'https://source.unsplash.com/random/800x400?sig=3'
+// ]
+const images = ['./1.jpg', './2.jpg']
 
 const App = () => {
   return (

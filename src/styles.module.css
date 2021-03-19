@@ -13,6 +13,7 @@
   height: 400px;
   position: relative;
   margin: 0 auto;
+  border: 3px solid red;
 }
 
 .wrapper img {
