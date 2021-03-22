@@ -1,47 +1,58 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './styles.module.css'
 
 export const Slider = ({ imageList }) => {
   // const [array, setArray] = useState([1, 2, 3])
   let [active, setActive] = useState(0)
 
+const setPreviousImage = ()=>{
+  if (active !== 0) {
+    setActive((active -= 1))
+  } else {
+    setActive((active = imageList.length - 1))
+  }
+}
+
+const setNextImage = ()=>{
+  if (active !== imageList.length - 1) {
+    setActive((active += 1))
+  } else {
+    setActive((active = 0))
+  }
+}
+
   const leftClickHandle = () => {
-    console.log('Left clicked')
-    if (active !== 0) {
-      setActive((active -= 1))
-    } else {
-      setActive((active = imageList.length - 1))
-    }
+    clearInterval(autoSlider)
+    setPreviousImage();
 
     // const [first, second, ...rest] = array
     // setArray([...rest, first, second])
   }
 
   const rightClickHandle = () => {
-    console.log('Right clicked')
-    if (active !== imageList.length - 1) {
-      setActive((active += 1))
-    } else {
-      setActive((active = 0))
-    }
+    clearInterval(autoSlider)
+    setNextImage();
 
-    console.log(active)
     // const [first, ...rest] = array
     // setArray([...rest, first])
   }
 
   const dotClickHandler = (e) => {
+    clearInterval(autoSlider)
+    
     const dotNum = e.target.getAttribute('data-key')
     setActive((active = parseInt(dotNum)))
+
   }
 
-  setInterval(() => {
-    if (active !== imageList.length - 1) {
-      setActive((active += 1))
-    } else {
-      setActive((active = 0))
-    }
-  }, 5000)
+  // let autoSlider = setInterval(setNextImage, 2000)
+
+  let autoSlider;
+  useEffect(() => {
+   autoSlider = setInterval(setNextImage, 3000);
+    return () => clearInterval(autoSlider);
+  }, []);
+
   return (
     <div>
       <div style={{ textAlign: 'right', maxWidth: '1000px' }}>

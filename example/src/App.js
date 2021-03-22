@@ -9,13 +9,13 @@ import 'image-slider/dist/index.css'
 
 const images = [
   {
-    url: 'https://source.unsplash.com/random/800x400?sig=1',
+    url: './1.jpg',
     title: 'AAAA',
     author: 'John Doe',
     authorLink: 'dfdfrf'
   },
   {
-    url: 'https://source.unsplash.com/random/800x400?sig=2',
+    url: './2.jpg',
     title: 'BBBB',
     author: 'John Doe',
     authorLink: 'dfdfrf'
