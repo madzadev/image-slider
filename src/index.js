@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styles from './styles.module.css'
 
-export const Slider = ({ imageList, autoPlay, }) => {
+export const Slider = ({ imageList, autoPlay={true}, showCredits={true}, showProgress={true}, showControls={true}, showDescription={true}}) => {
   // const [array, setArray] = useState([1, 2, 3])
   let [active, setActive] = useState(0)
 
@@ -50,7 +50,8 @@ const setNextImage = ()=>{
 
   return (
     <div>
-      <div style={{ textAlign: 'right', maxWidth: '1000px' }}>
+      {showCredits&&(
+        <div style={{ textAlign: 'right', maxWidth: '1000px' }}>
         <p>
           Photo by{' '}
           <a href='https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
@@ -62,18 +63,27 @@ const setNextImage = ()=>{
           </a>
         </p>
       </div>
+      )}
       <div className={styles.wrapper}>
-        <p className={styles.progress}>
+        {showProgress&&(
+          <p className={styles.progress}>
           {`${active + 1} / ${imageList.length}`}
         </p>
-        <div className={styles.leftClick} onClick={leftClickHandle}>
+        )}
+        {showControls&&(
+          <div className={styles.leftClick} onClick={leftClickHandle}>
           ←
         </div>
+        )}
         <img src={imageList[active].url} alt='image' />
-        <div className={styles.rightClick} onClick={rightClickHandle}>
+        {showControls&&(
+          <div className={styles.rightClick} onClick={rightClickHandle}>
           →
         </div>
-        <div className={styles.description}>{imageList[active].title}</div>
+        )}
+        {showDescription&&(
+          <div className={styles.description}>{imageList[active].title}</div>
+        )}
       </div>
 
       <div className={styles.dots}>

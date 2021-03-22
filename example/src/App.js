@@ -36,7 +36,7 @@ const App = () => {
       <h1>Image Slider Component</h1>
       <p>This is the description of the component</p>
       {/* <div style={{ width: '800px', height: '400px' }}> */}
-      <Slider imageList={images} autoPlay={true}/>
+      <Slider imageList={images} autoPlay={false}/>
       {/* </div> */}`<h1>Installation</h1>
       <SyntaxHighlighter language='bash' style={coldarkDark}>
         {`npm install @madzadev/image-slider`}
