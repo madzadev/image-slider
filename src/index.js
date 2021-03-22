@@ -8,6 +8,8 @@ import Credits from "./components/Credits";
 
 export const Slider = ({
   imageList,
+  width,
+  height,
   autoPlay = true,
   showCredits = true,
   showProgress = true,
@@ -72,7 +74,12 @@ export const Slider = ({
             <img className={styles.button} src={backButton} alt="back" />
           </div>
         )}
-        <img src={imageList[active].url} className={styles.image} alt="image" />
+        <img
+          src={imageList[active].url}
+          // className={styles.image}
+          style={{ width: width, height: height, objectFit: "cover" }}
+          alt="image"
+        />
         {showControls && (
           <div className={styles.rightClick} onClick={rightClickHandle}>
             <img className={styles.button} src={nextButton} alt="next" />

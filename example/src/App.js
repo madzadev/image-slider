@@ -9,24 +9,13 @@ import "image-slider/dist/index.css";
 
 const images = [
   {
-    url: "./1.jpg",
-    title: "AAAA",
-    author: "John Doe",
-    authorLink: "dfdfrf",
+    url: "https://picsum.photos/1200/300",
   },
   {
     url: "./2.jpg",
-    title: "BBBB",
-
-    author: "John Doe",
-    authorLink: "dfdfrf",
   },
   {
     url: "https://source.unsplash.com/random/800x400?sig=3",
-    title:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    author: "John Doe",
-    authorLink: "dfdfrf",
   },
 ];
 
@@ -35,7 +24,7 @@ const App = () => {
     <div className={styles.wrapper}>
       <h1>Image Slider Component</h1>
       <p>This is the description of the component</p>
-      <Slider imageList={images} autoPlay={true} showProgress={true} />
+      <Slider imageList={images} width={1200} height={300} autoPlay={true} />
       <h1>Installation</h1>
       <SyntaxHighlighter language="bash" style={coldarkDark}>
         {`npm install @madzadev/image-slider`}
@@ -46,31 +35,21 @@ const App = () => {
       </SyntaxHighlighter>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`const images = [
-          {
-            url: 'https://audioplayer.madza.dev/Madza-Chords_of_Life.mp3',
-            title: 'AAAA',
-            author: 'John Doe',
-            authorLink:'dfdfrf'
-          },
-          {
-            url: 'https://audioplayer.madza.dev/Madza-Late_Night_Drive.mp3',
-            title: 'Madza - Late Night Drive',
-            tags: ['dnb']
-          },
-          {
-            url: 'https://audioplayer.madza.dev/Madza-Persistence.mp3',
-            title: 'Madza - Persistence',
-            tags: ['dubstep']
-          }
+          {url: 'https://picsum.photos/1200/400'},
+          {url: 'https://picsum.photos/1200/400'},
+          {url: 'https://picsum.photos/1200/400'}
         ]`}
       </SyntaxHighlighter>
       <SyntaxHighlighter language="jsx" style={coldarkDark}>
-        {`<Slider imageList={images} />`}
+        {`<Slider imageList={images} width={1000} height={300}/>`}
       </SyntaxHighlighter>
       <p className="warning">
         <code>'imageList'</code> is the mandatory prop and requires to pass in
-        an array consisting of objects with <code>url</code>, <code>title</code>{" "}
-        and <code>tags</code> keys.
+        an array consisting of objects with <code>url</code> keys.
+      </p>
+      <p className="warning">
+        <code>'width'</code> and <code>'height'</code> are mandatory props that
+        set the dimension of the images shown.
       </p>
       <h1>Options</h1>
       <p className="note">
@@ -80,10 +59,6 @@ const App = () => {
         {`<Slider
         imageList={images}
         autoPlay={true}
-        showCredits={true}
-        showProgress={true}
-        showControls={true}
-        showDescription={true}
       />`}
       </SyntaxHighlighter>
       {/* <h1>Features</h1>
