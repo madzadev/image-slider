@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import styles from './styles.module.css'
 
 import Credits from './components/Credits'
+import left from './public/left.svg'
+import right from './public/right.svg'
 
 export const Slider = ({
   imageList,
@@ -52,36 +54,37 @@ export const Slider = ({
   }, 3000)
   return (
     <div>
-      {showCredits && (
-        <Credits
-          author={imageList[active].author}
-          authorLink={imageList[active].authorLink}
-        />
-      )}
       <div className={styles.wrapper}>
-        {showProgress && (
+        {/* {showDescription && (
+          <div className={styles.description}>
+            <p>{imageList[active].title}</p>
+          </div>
+        )} */}
+        {/* {showProgress && (
           <p className={styles.progress}>
             {`${active + 1} / ${imageList.length}`}
           </p>
-        )}
+        )} */}
         {showControls && (
           <div className={styles.leftClick} onClick={leftClickHandle}>
-            ←
+            <img src={left} alt='img' />
           </div>
         )}
 
         <img src={imageList[active].url} alt='image' />
         {showControls && (
           <div className={styles.rightClick} onClick={rightClickHandle}>
-            →
+            <img src={right} alt='image' />
           </div>
         )}
       </div>
-      {showDescription && (
-        <div className={styles.description}>
-          <p>{imageList[active].title}</p>
-        </div>
+      {showCredits && (
+        <Credits
+          author={imageList[active].author}
+          authorLink={imageList[active].authorLink}
+        />
       )}
+
       <div className={styles.dots}>
         {imageList.map((el, index) => {
           if (index !== active) {
@@ -90,7 +93,7 @@ export const Slider = ({
                 className={styles.dot}
                 data-key={index}
                 onClick={dotClickHandler}
-              ></div>
+              />
             )
           } else {
             return <div className={styles.activeDot}></div>

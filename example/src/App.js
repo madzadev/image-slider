@@ -10,19 +10,22 @@ import 'image-slider/dist/index.css'
 const images = [
   {
     url: 'https://source.unsplash.com/random/800x400?sig=1',
-    title: 'AAAA',
-    author: '',
+    title:
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    author: 'John Doe',
     authorLink: 'dfdfrf'
   },
   {
     url: 'https://source.unsplash.com/random/800x400?sig=2',
-    title: 'BBBB',
+    title:
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     author: 'John Doe',
     authorLink: 'dfdfrf'
   },
   {
     url: 'https://source.unsplash.com/random/800x400?sig=3',
-    title: 'CCCC',
+    title:
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     author: 'John Doe',
     authorLink: 'dfdfrf'
   }
