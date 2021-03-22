@@ -22,7 +22,6 @@ const setNextImage = ()=>{
 }
 
   const leftClickHandle = () => {
-    clearInterval(autoSlider)
     setPreviousImage();
 
     // const [first, second, ...rest] = array
@@ -30,7 +29,6 @@ const setNextImage = ()=>{
   }
 
   const rightClickHandle = () => {
-    clearInterval(autoSlider)
     setNextImage();
 
     // const [first, ...rest] = array
@@ -38,18 +36,15 @@ const setNextImage = ()=>{
   }
 
   const dotClickHandler = (e) => {
-    clearInterval(autoSlider)
-
     const dotNum = e.target.getAttribute('data-key')
     setActive((active = parseInt(dotNum)))
-
   }
+
   
-  let autoSlider;
   useEffect(() => {
-   autoSlider = setInterval(setNextImage, 3000);
+   let autoSlider = setInterval(setNextImage, 3000);
     return () => clearInterval(autoSlider);
-  }, []);
+  }, [active]);
 
   return (
     <div>
