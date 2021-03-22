@@ -39,14 +39,12 @@ const setNextImage = ()=>{
 
   const dotClickHandler = (e) => {
     clearInterval(autoSlider)
-    
+
     const dotNum = e.target.getAttribute('data-key')
     setActive((active = parseInt(dotNum)))
 
   }
-
-  // let autoSlider = setInterval(setNextImage, 2000)
-
+  
   let autoSlider;
   useEffect(() => {
    autoSlider = setInterval(setNextImage, 3000);
