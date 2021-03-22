@@ -6,6 +6,7 @@
   overflow: hidden;
   text-align: center;
   background-color: rgb(219, 219, 219);
+  box-sizing: border-box;
 }
 
 .progress {

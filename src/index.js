@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 
-var backButton = require("../public/back.svg");
-var nextButton = require("../public/next.svg");
+const backButton = require("../public/back.svg");
+const nextButton = require("../public/next.svg");
 
 import Credits from "./components/Credits";
 

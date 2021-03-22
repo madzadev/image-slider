@@ -9,36 +9,36 @@ import "image-slider/dist/index.css";
 
 const images = [
   {
-    url: "https://picsum.photos/1200/300",
+    url: "https://picsum.photos/seed/1/1000/300",
   },
   {
-    url: "./2.jpg",
+    url: "https://picsum.photos/seed/36/1000/300",
   },
   {
-    url: "https://source.unsplash.com/random/800x400?sig=3",
+    url: "https://picsum.photos/seed/47/1000/300",
   },
   {
-    url: "https://source.unsplash.com/random/800x400?sig=4",
+    url: "https://picsum.photos/seed/35/1000/300",
   },
   {
-    url: "https://source.unsplash.com/random/800x400?sig=5",
+    url: "https://picsum.photos/seed/19/1000/300",
   },
   {
-    url: "https://source.unsplash.com/random/800x400?sig=6",
+    url: "https://picsum.photos/seed/22/1000/300",
   },
   {
-    url: "https://source.unsplash.com/random/800x400?sig=7",
+    url: "https://picsum.photos/seed/33/1000/300",
   },
   {
-    url: "https://source.unsplash.com/random/800x400?sig=8",
+    url: "https://picsum.photos/seed/8/1000/300",
   },
 ];
 
 const App = () => {
   return (
     <div className={styles.wrapper}>
-      <h1>Image Slider Component</h1>
-      <p>This is the description of the component</p>
+      <h1 className={styles.title}>Image Slider Component</h1>
+      <p>React image slider with custom controls and autoplay function</p>
       <Slider
         imageList={images}
         width={1000}
@@ -56,9 +56,9 @@ const App = () => {
       </SyntaxHighlighter>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`const images = [
-          {url: 'https://picsum.photos/1200/400'},
-          {url: 'https://picsum.photos/1200/400'},
-          {url: 'https://picsum.photos/1200/400'}
+          {url: 'https://picsum.photos/seed/a/1600/900'},
+          {url: 'https://picsum.photos/seed/b/1920/1080'},
+          {url: 'https://picsum.photos/seed/c/1366/768'}
         ]`}
       </SyntaxHighlighter>
       <SyntaxHighlighter language="jsx" style={coldarkDark}>
@@ -75,7 +75,7 @@ const App = () => {
 
       <h1>Autoplay</h1>
       <p className="note">
-        The default values of available autoplay props are displayed.
+        The default values of available props are displayed.
       </p>
       <SyntaxHighlighter language="jsx" style={coldarkDark}>
         {`<Slider
@@ -86,7 +86,7 @@ const App = () => {
 
       <h1>Controls</h1>
       <p className="note">
-        The default values of available control props are displayed.
+        The default values of available props are displayed.
       </p>
       <SyntaxHighlighter language="jsx" style={coldarkDark}>
         {`<Slider 
@@ -97,7 +97,7 @@ const App = () => {
 
       <h1>Styling</h1>
       <p className="note">
-        The default values of available display props are shown.
+        The default values of available props are displayed.
       </p>
       <SyntaxHighlighter language="jsx" style={coldarkDark}>
         {`<Slider bgColor="grey"/>`}
