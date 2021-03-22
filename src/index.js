@@ -79,6 +79,7 @@ const setNextImage = ()=>{
           if (index !== active) {
             return (
               <div
+                key={index}
                 className={styles.dot}
                 data-key={index}
                 onClick={dotClickHandler}
