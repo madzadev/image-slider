@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styles from './styles.module.css'
 
-import backButton from '../public/back.png'
-import nextButton from '../public/next.png'
+import backButton from './../public/back.png'
+import nextButton from './../public/next.png'
 
 export const Slider = ({ imageList, autoPlay=true, showCredits=true, showProgress=true, showControls=true, showDescription=true}) => {
   // const [array, setArray] = useState([1, 2, 3])
