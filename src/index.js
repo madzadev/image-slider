@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './styles.module.css'
 
+<<<<<<< HEAD
 import Credits from './components/Credits'
 import left from './public/left.svg'
 import right from './public/right.svg'
@@ -12,30 +13,41 @@ export const Slider = ({
   showControls = true,
   showDescription = true
 }) => {
+=======
+import backButton from './../public/back.png'
+import nextButton from './../public/next.png'
+
+export const Slider = ({ imageList, autoPlay=true, showCredits=true, showProgress=true, showControls=true, showDescription=true}) => {
+>>>>>>> 02e91dd7fd48ddc04aebe3f2d2c093ef2e77225e
   // const [array, setArray] = useState([1, 2, 3])
   let [active, setActive] = useState(0)
 
+const setPreviousImage = ()=>{
+  if (active !== 0) {
+    setActive((active -= 1))
+  } else {
+    setActive((active = imageList.length - 1))
+  }
+}
+
+const setNextImage = ()=>{
+  if (active !== imageList.length - 1) {
+    setActive((active += 1))
+  } else {
+    setActive((active = 0))
+  }
+}
+
   const leftClickHandle = () => {
-    console.log('Left clicked')
-    if (active !== 0) {
-      setActive((active -= 1))
-    } else {
-      setActive((active = imageList.length - 1))
-    }
+    setPreviousImage();
 
     // const [first, second, ...rest] = array
     // setArray([...rest, first, second])
   }
 
   const rightClickHandle = () => {
-    console.log('Right clicked')
-    if (active !== imageList.length - 1) {
-      setActive((active += 1))
-    } else {
-      setActive((active = 0))
-    }
+    setNextImage();
 
-    console.log(active)
     // const [first, ...rest] = array
     // setArray([...rest, first])
   }
@@ -45,12 +57,13 @@ export const Slider = ({
     setActive((active = parseInt(dotNum)))
   }
 
-  setInterval(() => {
-    if (active !== imageList.length - 1) {
-      setActive((active += 1))
-    } else {
-      setActive((active = 0))
+  
+  useEffect(() => {
+    if(autoPlay){
+      let autoSlider = setInterval(setNextImage, 3000);
+      return () => clearInterval(autoSlider);
     }
+<<<<<<< HEAD
   }, 3000)
   return (
     <div>
@@ -76,6 +89,45 @@ export const Slider = ({
           <div className={styles.rightClick} onClick={rightClickHandle}>
             <img src={right} alt='image' />
           </div>
+=======
+  }, [active]);
+
+  return (
+    <div>
+      {showCredits&&(
+        <div style={{ textAlign: 'right', maxWidth: '1000px' }}>
+        <p>
+          Photo by{' '}
+          <a href='https://unsplash.com/@flyd2069?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
+            FLY:D
+          </a>{' '}
+          on{' '}
+          <a href='/collections/4390214/abstract?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>
+            Unsplash
+          </a>
+        </p>
+      </div>
+      )}
+      <div className={styles.wrapper}>
+        {showProgress&&(
+          <p className={styles.progress}>
+          {`${active + 1} / ${imageList.length}`}
+        </p>
+        )}
+        {showControls&&(
+          <div className={styles.leftClick} onClick={leftClickHandle}>
+            <img className={styles.button} src={backButton} alt="back"/>
+        </div>
+        )}
+        <img src={imageList[active].url} alt='image' />
+        {showControls&&(
+          <div className={styles.rightClick} onClick={rightClickHandle}>
+          <img className={styles.button} src={nextButton} alt="next"/>
+        </div>
+        )}
+        {showDescription&&(
+          <div className={styles.description}>{imageList[active].title}</div>
+>>>>>>> 02e91dd7fd48ddc04aebe3f2d2c093ef2e77225e
         )}
       </div>
       {showCredits && (
@@ -90,6 +142,7 @@ export const Slider = ({
           if (index !== active) {
             return (
               <div
+                key={index}
                 className={styles.dot}
                 data-key={index}
                 onClick={dotClickHandler}

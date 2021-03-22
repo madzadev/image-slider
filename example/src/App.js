@@ -9,16 +9,26 @@ import 'image-slider/dist/index.css'
 
 const images = [
   {
+<<<<<<< HEAD
     url: 'https://source.unsplash.com/random/800x400?sig=1',
     title:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+=======
+    url: './1.jpg',
+    title: 'AAAA',
+>>>>>>> 02e91dd7fd48ddc04aebe3f2d2c093ef2e77225e
     author: 'John Doe',
     authorLink: 'dfdfrf'
   },
   {
+<<<<<<< HEAD
     url: 'https://source.unsplash.com/random/800x400?sig=2',
     title:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+=======
+    url: './2.jpg',
+    title: 'BBBB',
+>>>>>>> 02e91dd7fd48ddc04aebe3f2d2c093ef2e77225e
     author: 'John Doe',
     authorLink: 'dfdfrf'
   },
@@ -31,13 +41,12 @@ const images = [
   }
 ]
 
-// const images = ['./1.jpg', './2.jpg']
-
 const App = () => {
   return (
     <div className={styles.wrapper}>
       <h1>Image Slider Component</h1>
       <p>This is the description of the component</p>
+<<<<<<< HEAD
       <Slider
         imageList={images}
         showCredits={true}
@@ -46,6 +55,11 @@ const App = () => {
         showDescription={true}
       />
       <h1>Installation</h1>
+=======
+      {/* <div style={{ width: '800px', height: '400px' }}> */}
+      <Slider imageList={images} autoPlay={false}/>
+      {/* </div> */}<h1>Installation</h1>
+>>>>>>> 02e91dd7fd48ddc04aebe3f2d2c093ef2e77225e
       <SyntaxHighlighter language='bash' style={coldarkDark}>
         {`npm install @madzadev/image-slider`}
       </SyntaxHighlighter>
