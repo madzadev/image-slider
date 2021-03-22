@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styles from './styles.module.css'
 
-export const Slider = ({ imageList }) => {
+export const Slider = ({ imageList, autoPlay, }) => {
   // const [array, setArray] = useState([1, 2, 3])
   let [active, setActive] = useState(0)
 
@@ -42,8 +42,10 @@ const setNextImage = ()=>{
 
   
   useEffect(() => {
-   let autoSlider = setInterval(setNextImage, 3000);
-    return () => clearInterval(autoSlider);
+    if(autoPlay){
+      let autoSlider = setInterval(setNextImage, 3000);
+      return () => clearInterval(autoSlider);
+    }
   }, [active]);
 
   return (
