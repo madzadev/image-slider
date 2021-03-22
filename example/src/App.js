@@ -17,6 +17,21 @@ const images = [
   {
     url: "https://source.unsplash.com/random/800x400?sig=3",
   },
+  {
+    url: "https://source.unsplash.com/random/800x400?sig=4",
+  },
+  {
+    url: "https://source.unsplash.com/random/800x400?sig=5",
+  },
+  {
+    url: "https://source.unsplash.com/random/800x400?sig=6",
+  },
+  {
+    url: "https://source.unsplash.com/random/800x400?sig=7",
+  },
+  {
+    url: "https://source.unsplash.com/random/800x400?sig=8",
+  },
 ];
 
 const App = () => {
@@ -24,11 +39,17 @@ const App = () => {
     <div className={styles.wrapper}>
       <h1>Image Slider Component</h1>
       <p>This is the description of the component</p>
-      <Slider imageList={images} width={1200} height={300} autoPlay={true} />
+      <Slider
+        imageList={images}
+        width={1000}
+        height={300}
+        autoPlayInterval={5000}
+      />
       <h1>Installation</h1>
       <SyntaxHighlighter language="bash" style={coldarkDark}>
         {`npm install @madzadev/image-slider`}
       </SyntaxHighlighter>
+
       <h1>Usage</h1>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`import Slider from '@madzadev/image-slider'`}
@@ -51,46 +72,37 @@ const App = () => {
         <code>'width'</code> and <code>'height'</code> are mandatory props that
         set the dimension of the images shown.
       </p>
-      <h1>Options</h1>
+
+      <h1>Autoplay</h1>
       <p className="note">
-        The default values of available options props are displayed.
+        The default values of available autoplay props are displayed.
       </p>
       <SyntaxHighlighter language="jsx" style={coldarkDark}>
         {`<Slider
-        imageList={images}
         autoPlay={true}
+        autoPlayInterval={3000} //in milliseconds
       />`}
       </SyntaxHighlighter>
-      {/* <h1>Features</h1>
-      Play/Pause Next/Previous tracks Loop audio Shuffle play Drag progress bar
-      Volume control Clickable playlist Filter audio files based on genre Search
-      audio files by title Responsive design */}
-      <h1>Sizing</h1>
+
+      <h1>Controls</h1>
       <p className="note">
-        By default image slider is set to be 100% width and height of it's
-        parent. To set specific values, wrap it:
+        The default values of available control props are displayed.
       </p>
       <SyntaxHighlighter language="jsx" style={coldarkDark}>
-        {` <div style={{width: '700px', height: '350px'}}>
-      <Slider imageList={images}/>
-    </div>`}
+        {`<Slider 
+        showArrowControls={true}
+        showDotControls={true}
+        />`}
       </SyntaxHighlighter>
-      <p className="warning">
-        Larger images will fit and be centered, thanks to{" "}
-        <code>object-fit: cover</code>.
-      </p>
-      <p className="warning">
-        Smaller images will not be stretched, instead the background color will
-        be displayed.
-      </p>
-      <h1>Preview</h1>
+
+      <h1>Styling</h1>
       <p className="note">
-        By default image preview is disabled (dots are used instead). To enable
-        it, set <code>preview</code> prop to <code>true</code>.
+        The default values of available display props are shown.
       </p>
       <SyntaxHighlighter language="jsx" style={coldarkDark}>
-        {`<Slider imageList={images} preview={true}/>`}
+        {`<Slider bgColor="grey"/>`}
       </SyntaxHighlighter>
+
       <h1>Final notes</h1>
       <p className="warning">
         The project is under MIT licence, so be free to check it out and give

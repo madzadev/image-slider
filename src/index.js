@@ -11,9 +11,11 @@ export const Slider = ({
   width,
   height,
   autoPlay = true,
+  autoPlayInterval = 3000,
   showCredits = true,
   showProgress = true,
-  showControls = true,
+  showArrowControls = true,
+  showDotControls = true,
   showDescription = true,
 }) => {
   // const [array, setArray] = useState([1, 2, 3])
@@ -56,7 +58,7 @@ export const Slider = ({
 
   useEffect(() => {
     if (autoPlay) {
-      let autoSlider = setInterval(setNextImage, 3000);
+      let autoSlider = setInterval(setNextImage, autoPlayInterval);
       return () => clearInterval(autoSlider);
     }
   }, [active]);
@@ -69,7 +71,7 @@ export const Slider = ({
             {`${active + 1} / ${imageList.length}`}
           </p>
         )} */}
-        {showControls && (
+        {showArrowControls && (
           <div className={styles.leftClick} onClick={leftClickHandle}>
             <img className={styles.button} src={backButton} alt="back" />
           </div>
@@ -80,7 +82,7 @@ export const Slider = ({
           style={{ width: width, height: height, objectFit: "cover" }}
           alt="image"
         />
-        {showControls && (
+        {showArrowControls && (
           <div className={styles.rightClick} onClick={rightClickHandle}>
             <img className={styles.button} src={nextButton} alt="next" />
           </div>
@@ -95,23 +97,24 @@ export const Slider = ({
           authorLink={imageList[active].authorLink}
         />
       )} */}
-
-      <div className={styles.dots}>
-        {imageList.map((el, index) => {
-          if (index !== active) {
-            return (
-              <div
-                key={index}
-                className={styles.dot}
-                data-key={index}
-                onClick={dotClickHandler}
-              />
-            );
-          } else {
-            return <div className={styles.activeDot}></div>;
-          }
-        })}
-      </div>
+      {showDotControls && (
+        <div className={styles.dots}>
+          {imageList.map((el, index) => {
+            if (index !== active) {
+              return (
+                <div
+                  key={index}
+                  className={styles.dot}
+                  data-key={index}
+                  onClick={dotClickHandler}
+                />
+              );
+            } else {
+              return <div className={styles.activeDot}></div>;
+            }
+          })}
+        </div>
+      )}
     </div>
   );
 };
