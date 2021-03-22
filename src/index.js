@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import styles from './styles.module.css'
 
-export const Slider = ({ imageList, autoPlay={true}, showCredits={true}, showProgress={true}, showControls={true}, showDescription={true}}) => {
+import backButton from '../public/back.png'
+import nextButton from '../public/next.png'
+
+export const Slider = ({ imageList, autoPlay=true, showCredits=true, showProgress=true, showControls=true, showDescription=true}) => {
   // const [array, setArray] = useState([1, 2, 3])
   let [active, setActive] = useState(0)
 
@@ -72,13 +75,13 @@ const setNextImage = ()=>{
         )}
         {showControls&&(
           <div className={styles.leftClick} onClick={leftClickHandle}>
-          ←
+            <img className={styles.button} src={backButton} alt="back"/>
         </div>
         )}
         <img src={imageList[active].url} alt='image' />
         {showControls&&(
           <div className={styles.rightClick} onClick={rightClickHandle}>
-          →
+          <img className={styles.button} src={nextButton} alt="next"/>
         </div>
         )}
         {showDescription&&(
