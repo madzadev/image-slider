@@ -46,6 +46,7 @@ const App = () => {
         width={1000}
         height={300}
         autoPlayInterval={5000}
+        loopOnEnds={false}
       />
       <h1>Installation</h1>
       <SyntaxHighlighter language="bash" style={coldarkDark}>
@@ -75,7 +76,7 @@ const App = () => {
         set the dimension of the images shown.
       </p>
 
-      <h1>Autoplay</h1>
+      <h1>Behavior</h1>
       <p className="note">
         The default values of available props are displayed.
       </p>
@@ -83,6 +84,7 @@ const App = () => {
         {`<Slider
         autoPlay={true}
         autoPlayInterval={3000} //in milliseconds
+        loopOnEnds={true}
       />`}
       </SyntaxHighlighter>
 

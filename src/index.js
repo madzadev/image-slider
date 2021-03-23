@@ -10,11 +10,9 @@ export const Slider = ({
   height,
   autoPlay = true,
   autoPlayInterval = 3000,
-  showCredits = true,
-  showProgress = true,
+  loopOnEnds = true,
   showArrowControls = true,
   showDotControls = true,
-  showDescription = true,
 }) => {
   // const [array, setArray] = useState([1, 2, 3])
   let [active, setActive] = useState(0);
@@ -23,7 +21,9 @@ export const Slider = ({
     if (active !== 0) {
       setActive((active -= 1));
     } else {
-      setActive((active = imageList.length - 1));
+      if(loopOnEnds){
+        setActive((active = imageList.length - 1));
+      }
     }
   };
 
@@ -31,7 +31,9 @@ export const Slider = ({
     if (active !== imageList.length - 1) {
       setActive((active += 1));
     } else {
-      setActive((active = 0));
+      if(loopOnEnds){
+        setActive((active = 0));
+      }
     }
   };
 
@@ -64,7 +66,7 @@ export const Slider = ({
   return (
     <div>
       <div className={styles.wrapper}>
-        {showArrowControls && (
+        {(showArrowControls && !loopOnEnds && active!==0) && (
           <div className={styles.leftClick} onClick={leftClickHandle}>
             <img className={styles.button} src={backButton} alt="back" />
           </div>
@@ -74,7 +76,7 @@ export const Slider = ({
           style={{ width: width, height: height, objectFit: "cover" }}
           alt="image"
         />
-        {showArrowControls && (
+        {(showArrowControls && !loopOnEnds && active !== imageList.length - 1) && (
           <div className={styles.rightClick} onClick={rightClickHandle}>
             <img className={styles.button} src={nextButton} alt="next" />
           </div>
