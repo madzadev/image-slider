@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./App.module.css";
 
-import Wrapper from './components/Wrapper'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Wrapper from "./components/Wrapper";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -44,11 +44,7 @@ const App = () => {
       {/* <h1 className={styles.title}>Image Slider Component</h1>
       <p>React image slider with custom controls and autoplay function</p> */}
       <Header />
-      <Slider
-        imageList={images}
-        width={1000}
-        height={300}
-      />
+      <Slider imageList={images} width={1000} height={300} />
       <h1>Installation</h1>
       <SyntaxHighlighter language="bash" style={coldarkDark}>
         {`npm install @madzadev/image-slider`}
@@ -83,9 +79,9 @@ const App = () => {
       </p>
       <SyntaxHighlighter language="jsx" style={coldarkDark}>
         {`<Slider
+        loop={true}
         autoPlay={true}
-        autoPlayInterval={3000} //in milliseconds
-        loopOnEnds={true}
+        autoPlayInterval={3000} // in milliseconds
       />`}
       </SyntaxHighlighter>
 
@@ -113,7 +109,7 @@ const App = () => {
         The project is under MIT licence, so be free to check it out and give
         contributions.
       </p>
-      <Footer/>
+      <Footer />
     </Wrapper>
   );
 };
