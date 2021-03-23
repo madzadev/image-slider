@@ -15,7 +15,11 @@ const Footer = () => {
           Madza
         </a>
       </p> */}
-      <p>Placeholder images from <a href="https://picsum.photos/">Lorem picsum</a>. Icons from <a href="https://www.flaticon.com/">FlatIcon.</a></p>
+      <p>Placeholder images from <a className='link'
+          target='_blank'
+          rel='noopener noreferrer' href="https://picsum.photos/">Lorem picsum</a>. Icons from <a className='link'
+          target='_blank'
+          rel='noopener noreferrer' href="https://www.flaticon.com/">FlatIcon.</a></p>
       <p>
         Have a suggestion?{' '}
         <a

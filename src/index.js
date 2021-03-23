@@ -4,8 +4,6 @@ import styles from "./styles.module.css";
 const backButton = require("../public/back.svg");
 const nextButton = require("../public/next.svg");
 
-import Credits from "./components/Credits";
-
 export const Slider = ({
   imageList,
   width,
@@ -66,11 +64,6 @@ export const Slider = ({
   return (
     <div>
       <div className={styles.wrapper}>
-        {/* {showProgress && (
-          <p className={styles.progress}>
-            {`${active + 1} / ${imageList.length}`}
-          </p>
-        )} */}
         {showArrowControls && (
           <div className={styles.leftClick} onClick={leftClickHandle}>
             <img className={styles.button} src={backButton} alt="back" />
@@ -78,7 +71,6 @@ export const Slider = ({
         )}
         <img
           src={imageList[active].url}
-          // className={styles.image}
           style={{ width: width, height: height, objectFit: "cover" }}
           alt="image"
         />
@@ -87,16 +79,7 @@ export const Slider = ({
             <img className={styles.button} src={nextButton} alt="next" />
           </div>
         )}
-        {/* {showDescription && (
-          <div className={styles.description}>{imageList[active].title}</div>
-        )} */}
       </div>
-      {/* {showCredits && (
-        <Credits
-          author={imageList[active].author}
-          authorLink={imageList[active].authorLink}
-        />
-      )} */}
       {showDotControls && (
         <div className={styles.dots}>
           {imageList.map((el, index) => {
