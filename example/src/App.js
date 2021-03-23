@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./App.module.css";
 
+import Footer from './components/Footer'
+
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -108,6 +110,7 @@ const App = () => {
         The project is under MIT licence, so be free to check it out and give
         contributions.
       </p>
+      <Footer/>
     </div>
   );
 };
