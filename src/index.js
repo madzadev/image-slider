@@ -66,7 +66,7 @@ export const Slider = ({
   return (
     <div>
       <div className={styles.wrapper}>
-        {(showArrowControls && !loopOnEnds && active!==0) && (
+        {((showArrowControls && !loopOnEnds && active!==0)||loopOnEnds) && (
           <div className={styles.leftClick} onClick={leftClickHandle}>
             <img className={styles.button} src={backButton} alt="back" />
           </div>
@@ -76,7 +76,7 @@ export const Slider = ({
           style={{ width: width, height: height, objectFit: "cover" }}
           alt="image"
         />
-        {(showArrowControls && !loopOnEnds && active !== imageList.length - 1) && (
+        {((showArrowControls && !loopOnEnds && active !== imageList.length - 1)||loopOnEnds) && (
           <div className={styles.rightClick} onClick={rightClickHandle}>
             <img className={styles.button} src={nextButton} alt="next" />
           </div>
