@@ -52,7 +52,8 @@ const App = () => {
 
       <h1>Usage</h1>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
-        {`import Slider from '@madzadev/image-slider'`}
+        {`import Slider from '@madzadev/image-slider'
+        import "image-slider/dist/index.css"`}
       </SyntaxHighlighter>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
         {`const images = [
