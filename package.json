@@ -21,7 +21,7 @@
   "module": "dist/index.modern.js",
   "source": "src/index.js",
   "engines": {
-    "node": ">=14"
+    "node": "14.x"
   },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
@@ -30,7 +30,7 @@
     "predeploy": "cd example && npm install && npm run build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.8.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
