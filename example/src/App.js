@@ -8,8 +8,8 @@ import Footer from "./components/Footer";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import { Slider } from "image-slider";
-import "image-slider/dist/index.css";
+import Slider from "@madzadev/image-slider";
+import "@madzadev/image-slider/dist/index.css";
 
 const images = [
   {

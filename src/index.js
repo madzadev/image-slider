@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 const backButton = require("../public/back.svg");
 const nextButton = require("../public/next.svg");
 
-export const Slider = ({
+const Slider = ({
   imageList,
   width,
   height,
@@ -104,3 +104,5 @@ export const Slider = ({
     </div>
   );
 };
+
+export default Slider;

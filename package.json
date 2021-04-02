@@ -1,5 +1,5 @@
 {
-  "name": "image-slider",
+  "name": "@madzadev/image-slider",
   "version": "1.0.0",
   "description": "Image slider component to display images",
   "keywords": [
