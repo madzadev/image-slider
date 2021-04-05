@@ -40,8 +40,6 @@ const images = [
 const App = () => {
   return (
     <Wrapper>
-      {/* <h1 className={styles.title}>Image Slider Component</h1>
-      <p>React image slider with custom controls and autoplay function</p> */}
       <Header />
       <Slider imageList={images} width={1000} height={300} />
       <h1>Installation</h1>
