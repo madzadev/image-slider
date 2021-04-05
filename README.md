@@ -1,6 +1,6 @@
 # React image slider
 
-![Player Preview](https://i.imgur.com/qVX68ve.gif)
+![Slider Preview](https://images.ctfassets.net/zlsyc9paq6sa/4ztfe5YDb4VweOSiTbr0c/14dda169e9335f8c83f7a638f834ef26/1617358599_x.gif)
 
 ### Demo: [https://image-slider-madza.vercel.app](https://image-slider-madza.vercel.app)
 
