@@ -53,21 +53,17 @@ The default values of available options props are displayed.
 
 The default values of available props are displayed.
 
-You can further customize the player by editing the colors variable below.
-
 ```javascript
 <Slider showArrowControls={true} showDotControls={true} />
 ```
 
 ## Styling
 
-The default values of available props are displayed.
+If set, background color is displayed to fill the background if images are smaller than the slider wrapper.
 
 ```javascript
 <Slider bgColor="none" />
 ```
-
-If set, background color is displayed to fill the background if images are smaller than the slider wrapper.
 
 ## Final notes
 
