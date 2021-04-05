@@ -14,7 +14,6 @@ const Slider = ({
   showArrowControls = true,
   showDotControls = true,
 }) => {
-  // const [array, setArray] = useState([1, 2, 3])
   let [active, setActive] = useState(0);
 
   const setPreviousImage = () => {
@@ -39,16 +38,10 @@ const Slider = ({
 
   const leftClickHandle = () => {
     setPreviousImage();
-
-    // const [first, second, ...rest] = array
-    // setArray([...rest, first, second])
   };
 
   const rightClickHandle = () => {
     setNextImage();
-
-    // const [first, ...rest] = array
-    // setArray([...rest, first])
   };
 
   const dotClickHandler = (e) => {
