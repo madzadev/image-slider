@@ -96,7 +96,7 @@ const Slider = ({
                 />
               );
             } else {
-              return <div className={styles.activeDot}></div>;
+              return <div key={index} className={styles.activeDot}></div>;
             }
           })}
         </div>
