@@ -13,6 +13,7 @@ const Slider = ({
   autoPlayInterval = 3000,
   showArrowControls = true,
   showDotControls = true,
+  bgColor = "none",
 }) => {
   let [active, setActive] = useState(0);
 
@@ -58,7 +59,7 @@ const Slider = ({
 
   return (
     <div>
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} style={{ backgroundColor: bgColor }}>
         {((showArrowControls && !loop && active !== 0) || loop) && (
           <div className={styles.leftClick} onClick={leftClickHandle}>
             <img className={styles.button} src={backButton} alt="back" />
@@ -66,7 +67,11 @@ const Slider = ({
         )}
         <img
           src={imageList[active].url}
-          style={{ width: width, height: height, objectFit: "cover" }}
+          style={{
+            width: width,
+            height: height,
+            objectFit: "cover",
+          }}
           alt="image"
         />
         {((showArrowControls && !loop && active !== imageList.length - 1) ||

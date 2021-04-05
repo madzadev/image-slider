@@ -96,10 +96,11 @@ const App = () => {
 
       <h1>Styling</h1>
       <p className="note">
-        The default values of available props are displayed.
+        If set, this prop fills the background if images are smaller than the
+        slider wrapper.
       </p>
       <SyntaxHighlighter language="jsx" style={coldarkDark}>
-        {`<Slider bgColor="grey"/>`}
+        {`<Slider bgColor="none"/>`}
       </SyntaxHighlighter>
 
       <h1>Final notes</h1>

@@ -15,7 +15,7 @@
 ## Usage
 
 ```javascript
-import Player from "@madzadev/image-slider";
+import Slider from "@madzadev/image-slider";
 import "@madzadev/image-slider/dist/index.css";
 ```
 
@@ -64,8 +64,10 @@ You can further customize the player by editing the colors variable below.
 The default values of available props are displayed.
 
 ```javascript
-<Slider bgColor="grey" />
+<Slider bgColor="none" />
 ```
+
+If set, background color is displayed to fill the background if images are smaller than the slider wrapper.
 
 ## Final notes
 
