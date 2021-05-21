@@ -12,6 +12,8 @@
  npm install @madzadev/image-slider
 ```
 
+If you are using NPM v7 or above, you need to add `--legacy-peer-deps` at the end of the command above.
+
 ## Usage
 
 ```javascript
@@ -36,6 +38,21 @@ an array consisting of objects with `url` keys.
 
 `width` and `height` are mandatory props that
 set the dimension of the images shown.
+
+## Config for NextJS
+
+If you are working on NextJS, there are 3 additional steps:
+
+1. `npm i next-images next-transpile-modules`
+2. create `next.config.js` in your project's root
+3. paste this in the newly created config file:
+
+```javascript
+const withImages = require("next-images");
+const withTM = require("next-transpile-modules")(["@madzadev/image-slider"]);
+
+module.exports = withImages(withTM());
+```
 
 ## Behavior
 
