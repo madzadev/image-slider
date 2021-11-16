@@ -1,6 +1,6 @@
 {
   "name": "@madzadev/image-slider",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "React/NextJS image slider component to display images",
   "keywords": [
     "react",
