@@ -60,7 +60,8 @@ const Slider = ({
   return (
     <div>
       <div className={styles.wrapper} style={{ backgroundColor: bgColor }}>
-        {((showArrowControls && !loop && active !== 0) || loop) && (
+        {((showArrowControls && !loop && active !== 0) ||
+          (showArrowControls && loop)) && (
           <div className={styles.leftClick} onClick={leftClickHandle}>
             <img className={styles.button} src={backButton} alt="back" />
           </div>
@@ -75,7 +76,7 @@ const Slider = ({
           alt="image"
         />
         {((showArrowControls && !loop && active !== imageList.length - 1) ||
-          loop) && (
+          (showArrowControls && loop)) && (
           <div className={styles.rightClick} onClick={rightClickHandle}>
             <img className={styles.button} src={nextButton} alt="next" />
           </div>
