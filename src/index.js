@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 
-import backButton from "icons/back.svg";
-import nextButton from "icons/next.svg";
+import backButton from "./icons/back.svg";
+import nextButton from "./icons/next.svg";
 
 const Slider = ({
   imageList,
