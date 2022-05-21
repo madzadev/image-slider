@@ -1,6 +1,6 @@
 # React/NextJS Image slider
 
-![Slider Preview](https://images.ctfassets.net/zlsyc9paq6sa/4ztfe5YDb4VweOSiTbr0c/14dda169e9335f8c83f7a638f834ef26/1617358599_x.gif)
+![Slider Preview](https://images.ctfassets.net/zlsyc9paq6sa/6wX3r2sDGHSPjMEmIk8nSi/5f9e6581fe9b7bf9cf721ffb14aad6b2/image_slider_preview.gif)
 
 ### Demo: [https://image-slider-madza.vercel.app](https://image-slider-madza.vercel.app)
 
