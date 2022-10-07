@@ -10,9 +10,9 @@ const Slider = ({
   height,
   loop = true,
   autoPlay = true,
-  autoPlayInterval = 3000,
-  showArrowControls = true,
-  showDotControls = true,
+  autoPlayInterval = 6000,
+  showArrowControls = false,
+  showDotControls = false,
   bgColor = "none",
 }) => {
   let [active, setActive] = useState(0);
