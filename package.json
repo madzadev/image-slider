@@ -12,7 +12,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/madzadev/image-slider.git"
+    "url": "git+https://github.com/madzadev/image-slider.git"
   },
   "homepage": "https://image-slider-madza.vercel.app/",
   "bugs": {
