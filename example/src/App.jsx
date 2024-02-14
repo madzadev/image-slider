@@ -52,10 +52,6 @@ const App = () => {
       <SyntaxHighlighter language="bash" style={coldarkDark}>
         {`npm install @madzadev/image-slider`}
       </SyntaxHighlighter>
-      <p className="note">
-        If you are using NPM v7 or above, you need to add{" "}
-        <code>--legacy-peer-deps</code> at the end of the command above.
-      </p>
 
       <h1>Usage</h1>
       <SyntaxHighlighter language="javascript" style={coldarkDark}>
@@ -80,23 +76,6 @@ const App = () => {
         <code>'width'</code> and <code>'height'</code> are mandatory props that
         set the dimension of the images shown.
       </p>
-
-      <h1>Config for NextJS</h1>
-      <p className="warning">
-        If you are working in NextJS, there are 3 additional steps:
-      </p>
-      <p>
-        1. <code>npm i next-images next-transpile-modules</code>
-      </p>
-      <p>
-        2. Create <code>next.config.js</code> in your project's root
-      </p>
-      <p>3. Paste this in the newly created config file:</p>
-      <SyntaxHighlighter language="javascript" style={coldarkDark}>
-        {`const withImages = require("next-images");
-        const withTM = require("next-transpile-modules")(["@madzadev/image-slider"]);
-        module.exports = withImages(withTM());`}
-      </SyntaxHighlighter>
 
       <h1>Behavior</h1>
       <p className="note">
@@ -132,7 +111,7 @@ const App = () => {
 
       <h1>Final notes</h1>
       <p className="warning">
-        The project is under MIT licence, so be free to check it out and give
+        The project is under MIT license, so be free to check it out and give
         contributions.
       </p>
       <Footer />
