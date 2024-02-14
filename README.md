@@ -6,13 +6,17 @@
 
 ---
 
+## Requirements
+
+Node.js 18.x / 20+ is required.
+
+Tested on React 18.2.0 and NextJS 14.1.0.
+
 ## Installation
 
 ```javascript
  npm install @madzadev/image-slider
 ```
-
-If you are using NPM v7 or above, you need to add `--legacy-peer-deps` at the end of the command above.
 
 ## Usage
 
@@ -38,21 +42,6 @@ an array consisting of objects with `url` keys.
 
 `width` and `height` are mandatory props that
 set the dimension of the images shown.
-
-## Config for NextJS
-
-If you are working on NextJS, there are 3 additional steps:
-
-1. `npm i next-images next-transpile-modules`
-2. create `next.config.js` in your project's root
-3. paste this in the newly created config file:
-
-```javascript
-const withImages = require("next-images");
-const withTM = require("next-transpile-modules")(["@madzadev/image-slider"]);
-
-module.exports = withImages(withTM());
-```
 
 ## Behavior
 
@@ -84,5 +73,5 @@ If set, background color is displayed to fill the background if images are small
 
 ## Final notes
 
-The project is under MIT licence, so be free to check it out and give
+The project is under MIT license, so be free to check it out and give
 contributions.
