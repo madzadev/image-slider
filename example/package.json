@@ -1,7 +1,6 @@
 {
-  "name": "example2",
-  "private": true,
-  "version": "0.0.0",
+  "name": "image-slider-example",
+  "version": "2.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@madzadev/image-slider": "^2.0.0",
+    "@madzadev/image-slider": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-syntax-highlighter": "^15.5.0"
