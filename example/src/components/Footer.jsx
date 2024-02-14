@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 const Footer = () => {
   return (
     <div className={styles.wrapper}>
-      <p>
+      <p className={styles.credits}>
         Placeholder images from{" "}
         <a
           className="link"
