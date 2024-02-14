@@ -9,7 +9,8 @@
 .button {
   width: 40px;
   height: 40px;
-  -webkit-filter: invert(100%); /* Safari/Chrome */
+  -webkit-filter: invert(100%);
+  /* Safari/Chrome */
   filter: invert(100%);
 }
 

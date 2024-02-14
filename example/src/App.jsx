@@ -1,8 +1,8 @@
 import React from "react";
 
-import Wrapper from "./components/Wrapper";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Wrapper from "../../vite/example2/src/components/Wrapper";
+import Header from "../../vite/example2/src/components/Header";
+import Footer from "../../vite/example2/src/components/Footer";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -47,7 +47,8 @@ const App = () => {
         {`npm install @madzadev/image-slider`}
       </SyntaxHighlighter>
       <p className="note">
-      If you are using NPM v7 or above, you need to add <code>--legacy-peer-deps</code> at the end of the command above.
+        If you are using NPM v7 or above, you need to add{" "}
+        <code>--legacy-peer-deps</code> at the end of the command above.
       </p>
 
       <h1>Usage</h1>

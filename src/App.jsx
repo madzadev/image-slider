@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import styles from "./styles.module.css";
+import "./App.css";
 
-import backButton from "icons/back.svg";
-import nextButton from "icons/next.svg";
+import backButton from "./icons/back.svg";
+import nextButton from "./icons/next.svg";
 
 const Slider = ({
   imageList,
@@ -59,11 +59,11 @@ const Slider = ({
 
   return (
     <div>
-      <div className={styles.wrapper} style={{ backgroundColor: bgColor }}>
+      <div className="wrapper" style={{ backgroundColor: bgColor }}>
         {((showArrowControls && !loop && active !== 0) ||
           (showArrowControls && loop)) && (
-          <div className={styles.leftClick} onClick={leftClickHandle}>
-            <img className={styles.button} src={backButton} alt="back" />
+          <div className="leftClick" onClick={leftClickHandle}>
+            <img className="button" src={backButton} alt="back" />
           </div>
         )}
         <img
@@ -77,25 +77,25 @@ const Slider = ({
         />
         {((showArrowControls && !loop && active !== imageList.length - 1) ||
           (showArrowControls && loop)) && (
-          <div className={styles.rightClick} onClick={rightClickHandle}>
-            <img className={styles.button} src={nextButton} alt="next" />
+          <div className="rightClick" onClick={rightClickHandle}>
+            <img className="button" src={nextButton} alt="next" />
           </div>
         )}
       </div>
       {showDotControls && (
-        <div className={styles.dots}>
+        <div className="dots">
           {imageList.map((el, index) => {
             if (index !== active) {
               return (
                 <div
                   key={index}
-                  className={styles.dot}
+                  className="dot"
                   data-key={index}
                   onClick={dotClickHandler}
                 />
               );
             } else {
-              return <div key={index} className={styles.activeDot}></div>;
+              return <div key={index} className="activeDot"></div>;
             }
           })}
         </div>
